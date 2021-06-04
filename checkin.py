@@ -32,9 +32,10 @@ def start():
         time = time.split('.')[0]
         #print(time)
         if sever == 'on':
-            requests.get('https://sctapi.ftqq.com/' + sckey + '.send?text='+mess+'，you have '+time+' days left')
+            requests.get('https://sctapi.ftqq.com/' + sckey + '.send?title='+mess)
+#             requests.get('https://sctapi.ftqq.com/' + sckey + '.send?text='+mess+'，you have '+time+' days left')
     else:
-        requests.get('https://sctapi.ftqq.com/' + sckey + '.send?text=cookie过期')
+        requests.get('https://sctapi.ftqq.com/' + sckey + '.send?title=cookie过期')
 
 def main_handler(event, context):
   return start()
